@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <app-transaction-section [control]="form.controls.section"></app-transaction-section>
+  <tui-error [error]="getErrorForField(form, 'section')"></tui-error>
+
+  <app-transaction-category
+    [control]="form.controls.category"
+    [sectionSubject$]="sectionSubject$"
+  ></app-transaction-category>
+  <tui-error [error]="getErrorForField(form, 'category')"></tui-error>
+
+  <app-transaction-sum [control]="form.controls.sum"></app-transaction-sum>
+  <tui-error [error]="getErrorForField(form, 'sum')"></tui-error>
+
+  <app-transaction-date [control]="form.controls.date"></app-transaction-date>
+  <tui-error [error]="getErrorForField(form, 'date')"></tui-error>
+
+  <div>
+    <app-transaction-checkbox
+      [control]="form.controls.allowComment"
+      [targetControl]="form.controls.comment"
+    ></app-transaction-checkbox>
+
+    <app-transaction-textarea
+      [control]="form.controls.comment"
+      [isEnabled]="form.value.allowComment || null"
+    ></app-transaction-textarea>
+    <tui-error [error]="getErrorForField(form, 'comment')"></tui-error>
+  </div>
+
+  <button tuiButton appearance="outline" type="submit" [showLoader]="!!(loading$ | async)">
+    Создать
+  </button>
+</form>
+
+<app-transaction-notification [isSuccess]="isSuccess$"></app-transaction-notification>

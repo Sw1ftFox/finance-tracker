@@ -1,0 +1,33 @@
+:host {
+  --tui-primary: rgb(51, 227, 151);
+  --tui-primary-active: rgb(33, 150, 99);
+  --tui-primary-hover: rgb(43, 185, 123);
+  --tui-primary-text: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  gap: 5px;
+
+  padding: 10px;
+  border: 2px solid var(--tui-primary-active);
+  border-radius: 15px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: var(--tui-base-02);
+}

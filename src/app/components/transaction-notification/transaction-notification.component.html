@@ -1,0 +1,8 @@
+@if (isSuccess | async) {
+<tui-notification class="notification" size="l" status="success" (close)="onClose()">
+  <div>
+    <strong>Успех!</strong>
+  </div>
+  Транзакция успешно создана!
+</tui-notification>
+}

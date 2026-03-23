@@ -1,0 +1,13 @@
+<div tuiGroup class="group" [collapsed]="true">
+  @for (section of sections; track $index) {
+  <tui-radio-block
+    contentAlign="right"
+    [formControl]="control"
+    size="l"
+    [hideRadio]="true"
+    [item]="section"
+  >
+    {{ section }}
+  </tui-radio-block>
+  }
+</div>
