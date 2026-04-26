@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@
 import { CommonModule, DatePipe } from '@angular/common';
 import { Transaction, TransactionSortType } from 'src/app/models/transaction.interface';
 import { TuiDataListWrapperModule, TuiSelectModule, TuiTilesModule } from '@taiga-ui/kit';
-import { TuiSvgModule, TuiTooltipModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiSvgModule, TuiTooltipModule } from '@taiga-ui/core';
 import {
   getTransactionsTileSize,
   TransactionTileSize,
@@ -26,6 +26,7 @@ import { TransactionService } from 'src/app/services/transaction/transaction.ser
     TuiDataListWrapperModule,
     DatePipe,
     TransactionSumPipe,
+    TuiButtonModule
   ],
   templateUrl: './transaction-history.component.html',
   styleUrl: './transaction-history.component.less',
